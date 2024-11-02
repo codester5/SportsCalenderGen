@@ -62,7 +62,7 @@ public class CalenderGenerate {
             long timestamp = game.getLong("startTimestamp");
             ZonedDateTime startDateTime = ZonedDateTime.ofInstant(
                     Instant.ofEpochSecond(timestamp),
-                    ZoneId.of("Europe/Istanbul")
+                    ZoneId.of("Europe/Berlin")
             );
 
             // Endzeitpunkt
