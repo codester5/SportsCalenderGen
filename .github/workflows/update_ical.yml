@@ -35,7 +35,7 @@ jobs:
       - name: Commit and Push updated iCal file
         run: |
           git config --global user.name "GitHub Calender Bot"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email ""
           git add calenderOutput/newCal.ics
           git commit -m "Update iCal file"
           git push
