@@ -2,7 +2,7 @@ name: Update iCal File
 
 on:
   schedule:
-    - cron: "0 0 */2 * *"  # Alle zwei Tage um Mitternacht
+    - cron: "0 0 * * *"  # Alle zwei Tage um Mitternacht
   workflow_dispatch:  # Ermöglicht manuelles Starten
 
 permissions:
