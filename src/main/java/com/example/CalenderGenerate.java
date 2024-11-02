@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
@@ -59,10 +61,20 @@ public class CalenderGenerate {
             }
 
             // Startzeitpunkt als ZonedDateTime
-            // Startzeitpunkt als ZonedDateTime
             ZoneId zone = ZoneId.of("Europe/Berlin");
             long timestamp = game.getLong("startTimestamp");
             ZonedDateTime startDateTime = Instant.ofEpochSecond(timestamp).atZone(zone);
+
+            LocalDateTime now = LocalDateTime.now();
+            ZoneOffset zoneOffSet = zone.getRules().getOffset(now);
+            if(zoneOffSet.getTotalSeconds()>0){
+                startDateTime= startDateTime.minusHours(zoneOffSet.getTotalSeconds()/3600);
+            }
+            else if(zoneOffSet.getTotalSeconds()<0){
+                startDateTime= startDateTime.plusHours(zoneOffSet.getTotalSeconds()/3600);
+            }
+    
+
 
             // Endzeitpunkt
             ZonedDateTime endDateTime = startDateTime.plusHours(2);
