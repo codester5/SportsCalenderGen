@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: Maven Jar Plugin 3.2.0
+Build-Jdk-Spec: 23
+Specification-Title: SportsCalendarProgram
+Specification-Version: 1.0
+Implementation-Title: SportsCalendarProgram
+Implementation-Version: 1
+Main-Class: com.example.Main
+
